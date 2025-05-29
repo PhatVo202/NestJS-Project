@@ -1,0 +1,30 @@
+# services:
+#   mongodb:
+#     image: mongo:5.0.15
+#     container_name: mongodb
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=root
+#       - MONGO_INITDB_ROOT_PASSWORD=1234
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - mongodb-data-container:/data/db
+
+# volumes:
+#   mongodb-data-container:
+
+# docker compose -p danieldev-mongodb-4rn up -d
+
+services:
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - 27019:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
